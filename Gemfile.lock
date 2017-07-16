@@ -1,0 +1,27 @@
+GIT
+  remote: git://github.com/masarakki/review.git
+  revision: 9451fd090e0db74934dd15c471079d08e499b88d
+  branch: fix-strong-for-ja-characters
+  specs:
+    review (2.1.0)
+      rubyzip
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    md2review (1.11.0)
+      redcarpet (> 2.0.0)
+    rake (12.0.0)
+    redcarpet (3.4.0)
+    rubyzip (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  md2review
+  rake
+  review (= 2.1.0)!
+
+BUNDLED WITH
+   1.15.1
