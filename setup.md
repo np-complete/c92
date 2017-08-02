@@ -22,10 +22,12 @@ $ sudo apt-get install `cat Aptfile`
 Debian系OS以外の場合は必要なライブラリをがんばって入れましょう[^1]。
 
 ライブラリがインストールできたら
+
 ```
 $ bundle install
 $ yarn install
 ```
+
 でgemとnpmをインストールします。
 
 [^1]: ライブラリをがんばって入れるよりUbuntuをインストールするほうが簡単です
