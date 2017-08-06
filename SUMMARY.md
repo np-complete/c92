@@ -5,3 +5,4 @@
 - [マストドンを開発する](development.md)
   - [開発の準備](setup.md)
   - [Rails](development-rails.md)
+  - [Sidekiq](development-sidekiq.md)
