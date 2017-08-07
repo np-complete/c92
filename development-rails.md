@@ -67,3 +67,13 @@ end
 ```
 
 [^2]: Rails開発をしていると本番サーバで `rails console` してデバッグする、ということが稀によくある
+
+### カスタマイズのポイント
+
+カスタマイズする際は、Rubyのオープンクラスをうまく活用し、既存のコードの変更点を最小になるようにします。
+マストドンは本体の更新スピードが早いので、なるべく元のコードに変更を入れないほうが管理が楽になります。
+
+`app/lib/customs` などのディレクトリを切り、変更点はすべて `ActiveSupport::Concern` の流儀でモジュール書きます。
+既存のファイルの変更点は、末尾で作ったモジュールを `include/prepend` するコードを追加するだけにできます。
+
+具体的に、[ProcessHashtagsServiceを拡張するモジュール](https://github.com/dwango/mastodon/blob/friends.nico/app/lib/friends/process_hashtags_service.rb) と [読込する部分](https://github.com/dwango/mastodon/blob/friends.nico/app/services/process_hashtags_service.rb) のコードを例として挙げておきます。
