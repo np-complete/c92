@@ -19,7 +19,7 @@ webpackの設定で、通常は `app/javascript/styles/application.scss` をエ�
 が、とりあえず一旦webpackがどんな動作をするのか確認しておきましょう。
 webpackの設定を見ると、どうやら `app/javascript/packs` の中にあるファイルをエントリーファイルにして、
 何種類かのJavaScriptファイルを生成しているようです。
-いくつかあるうち、`application.js` 以外は管理画面ようなどの小さなファイルです。
+いくつかあるうち、`application.js` 以外は管理画面用などの小さなファイルです。
 webpackの設定では、 `custom.js` を除外するような記述が書かれていますが、
 どうやらcssの時のようにカスタマイズはここに書けというわけでは無さそうで、**これが何を意味するのかわかりません**。
 `application.js` は案の定 `app/javascript/mastodon/main` を読み込んでおり、やはり `app/javascript/mastodon` が本命であることが確認できました。
