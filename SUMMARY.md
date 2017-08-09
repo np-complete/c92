@@ -8,4 +8,5 @@
   - [Sidekiq](development-sidekiq.md)
   - [フロントエンド](development-front.md)
   - [ブランチ戦略](branch.md)
+- [マストドンを活用する](middleware.md)
 - [あとがき](postdef.md)
