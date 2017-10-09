@@ -29,7 +29,7 @@ dwango に `tootsuite/mastodon` をフォークします。
 ```
 $ ghq get -p dwango/mastodon
 $ cd dwango/mastodon
-$ git checkout -b friends.nico v1.5.0
+$ git checkout -b friends.nico v2.0.0
 $ git push origin friends.nico
 ```
 
@@ -63,6 +63,9 @@ $ git remote add masarakki git@github.com:masarakki/mastodon
 個人のリモートリポジトリは `dwango/mastodon` からのフォークですが、
 この状態で `hub pull-request` を叩くと、きちんと `tootsuite/mastodon` に対してのプルリクエストが生成され、通常と同じ感覚で開発できます。
 
+本家も同時に開発する場合、同じデータベースの同じテーブルを参照していると、
+スキーマの定義のマイグレーションがめんどくさいことになります。
+その場合、 それぞれのディレクトリの `.env` ファイルに `DB_NAME=friends_nico_development` のようにデータベース名を指定してあげれば、プロジェクトごとにデータベースを分離できて便利です。
 
 [^2]: `ghq` コマンドは便利だから使いましょう
 [^3]: `hub` コマンドも(ry
@@ -80,17 +83,18 @@ $ hub pull-request
 
 ### バージョンアップ
 
-現在、 `friends.nico` ブランチは、本家の `v1.5.0` から派生して、独自機能がいくつかコミットされている、という状態になっています。
-さて、今朝リリースされたばかりの本家の新しいバージョンである `v1.5.1` に追従しなくてはなりません。
+現在、 `friends.nico` ブランチは、本家の `v2.0.0` から派生して、独自機能がいくつかコミットされている、という状態になっています。
+さて、本家の開発が進み無事に `v2.0.1` がリリースされたとします。
+こちらのリポジトリも新しいバージョンに追従しましょう。
 
 ```
-$ git tag                        # v1.5.0 までしかない
+$ git tag                        # v2.0.0 までしかない
 $ git fetch super
-$ git tag                        # v1.5.1 がある
-$ git checkout -b merge-v1.5.1 friends.nico
-$ git merge v1.5.1
+$ git tag                        # v2.0.1 がある
+$ git checkout -b merge-v2.0.1 friends.nico
+$ git merge v2.0.1
 $ # コンフリクトいっぱいなおす
-$ git push masarakki merge-v1.5.1
+$ git push masarakki merge-v2.0.1
 $ hub pull-request
 ```
 
@@ -99,7 +103,7 @@ $ hub pull-request
 デプロイには本家同様 `capistrano` を使いたいところですが、様々な秘匿情報を使う都合上、公開リポジトリには入れられないことが多いでしょう。
 そのため、社内のGithub:Enterpriseに専用のリポジトリを作り、
 その中から `https://github.com/dwango/mastodon` の `friends.nico` タグをデプロイするような設定をしています。
-また、プルリクエストを簡単にテストできるように、 `masarakki/merge-v1.5.1` のようにブランチを指定して開発環境にデプロイできる仕組みもあったほうが良いでしょう。
+また、プルリクエストを簡単にテストできるように、 `masarakki/merge-v2.0.1` のようにブランチを指定して開発環境にデプロイできる仕組みもあったほうが良いでしょう。
 
 ### もっとヤバイ場合
 
