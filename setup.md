@@ -8,11 +8,11 @@ Githubからコードをチェックアウトします。
 ```
 $ git clone https://github.com/tootsuite/mastodon
 $ cd mastodon
-$ git checkout -b v1.5.0 v1.5.0
+$ git checkout -b v2.0.0 v2.0.0
 ```
 
-現在のは最新バージョンである `v1.5.0` を基準に解説します。
-過去のバージョンを見るには `git checkout -b v1.4.0 v1.4.0` でチェックアウトできます。
+現在のは最新バージョンである `v2.0.0` を基準に解説します。
+過去のバージョンを見るには `git checkout -b v1.6.1 v1.6.1` でチェックアウトできます。
 
 マストドン開発には `ruby`, `node`, `yarn` のソフトウェアが必要です。
 それぞれ好きな方法でインストールしてください。
@@ -59,7 +59,7 @@ DB_USER=postgres
 
 ```
 $ rake db:create
-$ rake db:migrate
+$ rake db:schema:load
 ```
 
 を叩いてみましょう。

@@ -1,7 +1,8 @@
 # マストドンとは
 
 マストドンは、Twitterライクな**分散型**SNSです。
-**OStatusプロトコル**によりGNU Socialと互換性を持ち、**AGPL**のライセンスで[Github](https://github.com/tootsuite/mastodon/)に公開されています。
+**OStatus / ActivityPub プロトコル**によりGNU Socialと互換性を持ち、**AGPL**のライセンスで[Github](https://github.com/tootsuite/mastodon/)に公開されています。
+
 
 ## 分散型
 
@@ -22,6 +23,18 @@ OStatusは、分散SNSを実現するためのプロトコルで、いくつか�
 - [PubSubHubbub](https://pubsubhubbub.appspot.com/) データの変更を外部にリアルタイム通知する
 
 これらの技術を組み合わせてOStatusが実現されています。
+
+## ActivityPub
+
+[ActivityPub](https://www.w3.org/TR/activitypub/) は、OStatusに変わる新しい分散SNSプロトコルです。
+いろいろな技術の詰め合わせであるOStatusとは違い、
+分散SNSに必要なメッセージのやり取りに関わる様々な機能を整理し、たった2つのエンドポイントとJSONフォーマットに押し込めています。
+
+マストドンではバージョン1.6からActivityPubが搭載され、サーバ間の通信がActivityPubでもできるようになりました。
+他のOStatus互換システムのActivityPub移行次第ですが、OStatusはいずれサポートされなくなる予定です。
+
+ユーザ検索などのメッセージのやり取りと直接関係ない部分は仕様に規定されていないように見えます。
+マストドンでは従来通りWebFingerを使うようです。
 
 ## AGPL
 
