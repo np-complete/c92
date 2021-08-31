@@ -8,3 +8,13 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - uses: masarakki/docker-alias@v2
+        with:
+          image: vvakame/review:2.5
+          commands: review-pdfmaker
+      - run: rm `bundle exec which review-pdfmaker`
+      - run: bundle exec rake pdf
+      - uses: actions/upload-artifact@v1
+        with:
+          name: book
+          path: book.pdf
