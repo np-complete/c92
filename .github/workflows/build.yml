@@ -8,7 +8,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - uses: masarakki/docker-alias@v2
+      - uses: masarakki/docker-alias@v3
         with:
           image: vvakame/review:2.5
           commands: review-pdfmaker
