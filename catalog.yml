@@ -1,0 +1,17 @@
+---
+PREDEF:
+- README.re
+CHAPS:
+- what-is-mastodon.re
+- running-mastodon.re
+- manage-community.re
+- development.re
+- setup.re
+- development-rails.re
+- development-sidekiq.re
+- development-streaming.re
+- development-front.re
+- branch.re
+- middleware.re
+POSTDEF:
+- postdef.re
