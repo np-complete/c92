@@ -5,16 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-      - uses: masarakki/docker-alias@v3
-        with:
-          image: vvakame/review:2.5
-          commands: review-pdfmaker
-      - run: rm `bundle exec which review-pdfmaker`
-      - run: bundle exec rake pdf
-      - uses: actions/upload-artifact@v6
+      - uses: np-complete/build-book-action@v2.1
+      - uses: actions/upload-artifact@v4
         with:
           name: book
           path: book.pdf
