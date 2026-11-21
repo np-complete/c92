@@ -5,13 +5,22 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["/^np-complete//"],
+      "matchPackageNames": [
+        "/^np-complete//"
+      ],
       "minimumReleaseAge": null
     },
     {
-      "matchManagers": ["github-actions"],
-      "matchPackageNames": ["np-complete/book-actions"],
-      "rangeStrategy": "replace"
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "np-complete/book-actions"
+      ],
+      "rangeStrategy": "replace",
+      "minimumReleaseAge": "0 days",
+      "automerge": true,
+      "groupName": null
     }
   ]
 }
